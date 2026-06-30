@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { blog_data, blogCategories } from '../assets/assets'
 import { motion } from "motion/react"
+import { BLOG_CATEGORIES } from '../utils/constants'
 import BlogCard from './BlogCard'
 import { useAppContext } from '../context/AppContext'
 
@@ -19,7 +19,7 @@ const BlogList = () => {
   return (
     <div>
       <div className='flex justify-center gap-4 sm:gap-8 my-10 relative'>
-        {blogCategories.map((item)=> (
+        {BLOG_CATEGORIES.map((item)=> (
             <div key={item} className='relative'>
                 <button onClick={()=> setMenu(item)}
                  className={`cursor-pointer text-gray-500 ${menu === item && 'text-white px-4 pt-0.5'}`}>
