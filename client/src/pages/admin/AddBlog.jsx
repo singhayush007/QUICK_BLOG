@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { assets, blogCategories } from '../../assets/assets'
+import { assets } from '../../assets/assets'
+import { BLOG_CATEGORIES } from '../../utils/constants'
 import Quill from 'quill';
 import { useAppContext } from '../../context/AppContext';
 import toast from 'react-hot-toast';
@@ -109,7 +110,7 @@ const AddBlog = () => {
         <p className='mt-4'>Blog category</p>
         <select onChange={e => setCategory(e.target.value)} name="category" className='mt-2 px-3 py-2 border text-gray-500 border-gray-300 outline-none rounded'>
             <option value="">Select category</option>
-            {blogCategories.map((item, index)=>{
+            {BLOG_CATEGORIES.map((item, index)=>{
                 return <option key={index} value={item}>{item}</option>
             })}
         </select>
